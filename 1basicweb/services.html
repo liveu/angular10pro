@@ -1,34 +1,13 @@
 <h2>Services</h2>
-<div class="row service">
-    <div class = "col-md-2">
-        <img src="http://techguystaging.com/files/computer-icon.png">
-    </div>
-    <div class="col-md-10">
-        <h3>Hardware Repair</h3>
-        <p>Sed sit amet enim tempus, vestibulum massa vitae, pulvinar sem. Nam id felis sit amet nisl aliquet blandit nec eget erat. Phasellus non magna ac enim ullamcorper fermentum eu eget dolor. Vestibulum hendrerit ultrices neque ac luctus. Integer non risus sit amet justo molestie sodales a non nunc. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed mollis enim in sapien iaculis pretium.
-            Quisque interdum non lacus eget iaculis. Maecenas varius, tellus in viverra volutpat, elit magna porta erat, quis ullamcorper augue magna ac ex. Donec ac urna leo. Vestibulum tincidunt nunc lectus, vel lobortis erat molestie a. Pellentesque varius tempor auctor. Sed finibus libero eget mi vehicula, ut congue enim consequat. Sed eu nisl eget enim euismod semper vel a ligula. Praesent est ante, interdum in metus quis, malesuada ultrices nisi. Suspendisse ac nibh dignissim, ultrices felis eget, tincidunt sem.</p>
-        <a href="contact.html" class="btn btn-primary">Contact Us</a>
-    </div>
-</div>
-<div class="row service">
-    <div class = "col-md-2">
-        <img src="http://techguystaging.com/files/computer-icon.png">
-    </div>
-    <div class="col-md-10">
-        <h3>Hardware Repair</h3>
-        <p>Sed sit amet enim tempus, vestibulum massa vitae, pulvinar sem. Nam id felis sit amet nisl aliquet blandit nec eget erat. Phasellus non magna ac enim ullamcorper fermentum eu eget dolor. Vestibulum hendrerit ultrices neque ac luctus. Integer non risus sit amet justo molestie sodales a non nunc. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed mollis enim in sapien iaculis pretium.
-            Quisque interdum non lacus eget iaculis. Maecenas varius, tellus in viverra volutpat, elit magna porta erat, quis ullamcorper augue magna ac ex. Donec ac urna leo. Vestibulum tincidunt nunc lectus, vel lobortis erat molestie a. Pellentesque varius tempor auctor. Sed finibus libero eget mi vehicula, ut congue enim consequat. Sed eu nisl eget enim euismod semper vel a ligula. Praesent est ante, interdum in metus quis, malesuada ultrices nisi. Suspendisse ac nibh dignissim, ultrices felis eget, tincidunt sem.</p>
-        <a href="contact.html" class="btn btn-primary">Contact Us</a>
-    </div>
-</div>
-<div class="row service">
-    <div class = "col-md-2">
-        <img src="http://techguystaging.com/files/computer-icon.png">
-    </div>
-    <div class="col-md-10">
-        <h3>Hardware Repair</h3>
-        <p>Sed sit amet enim tempus, vestibulum massa vitae, pulvinar sem. Nam id felis sit amet nisl aliquet blandit nec eget erat. Phasellus non magna ac enim ullamcorper fermentum eu eget dolor. Vestibulum hendrerit ultrices neque ac luctus. Integer non risus sit amet justo molestie sodales a non nunc. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed mollis enim in sapien iaculis pretium.
-            Quisque interdum non lacus eget iaculis. Maecenas varius, tellus in viverra volutpat, elit magna porta erat, quis ullamcorper augue magna ac ex. Donec ac urna leo. Vestibulum tincidunt nunc lectus, vel lobortis erat molestie a. Pellentesque varius tempor auctor. Sed finibus libero eget mi vehicula, ut congue enim consequat. Sed eu nisl eget enim euismod semper vel a ligula. Praesent est ante, interdum in metus quis, malesuada ultrices nisi. Suspendisse ac nibh dignissim, ultrices felis eget, tincidunt sem.</p>
-        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+<div ng-repeat="service in services">
+    <div class="row service">
+        <div class = "col-md-2">
+            <img ng-src="http://techguystaging.com/files/{{service.image}}">
+        </div>
+        <div class="col-md-10">
+            <h3>{{service.name}}</h3>
+            <p>{{service.description}}</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
     </div>
 </div>

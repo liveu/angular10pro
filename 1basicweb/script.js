@@ -13,29 +13,36 @@ var app = angular.module("computer",['ngRoute'])//['injection Module']
          templateUrl : "about.html",
          controller : 'MainCtrl'
         }).
+    when('/services',{
+        templateUrl : "services.html",
+        controller : 'ServiceCtrl'
+    }).
     when('/contact',{
          templateUrl : "contact.html",
          controller : 'ContactCtrl'
         }).
-    when('/services',{
-         templateUrl : "services.html",
-         controller : 'ServiceCtrl'
-        }).
     otherwise({redirectTo:'/main'});
 }])
 
-.controller('MainCtrl', ['$scope',function($scope){
-    $scope.person = "Liveu";
-   console.log($scope);
+.controller('MainCtrl', ['$scope','$http', function($scope,$http){
+        $http.get('services.json').then(function(response){
+            console.log(JSON.stringify(response.data));
+            $scope.name = "Computer Science"
+            $scope.services = response.data;
+        });
 }])
 
-.controller('ContactCtrl', ['$scope', function($scope){
-
+.controller('ContactCtrl', ['$scope','$http', function($scope,$http){
+        $http.get('locations.json').then(function(response){
+            console.log(JSON.stringify(response.data));
+            $scope.locations = response.data;
+        });
 }])
 
 .controller('ServiceCtrl', ['$scope','$http',function($scope, $http){
     $http.get('services.json').then(function(response){
-        console.log(response.data);
+        console.log(JSON.stringify(response.data));
+        $scope.services = response.data;
     });
 }]);
 
